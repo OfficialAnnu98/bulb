@@ -47,17 +47,22 @@
         <script>
             let bulb = document.getElementById('bulb');
             let btn = document.getElementById('btn');
-            const audio = new Audio('click.mp3');
+            const onsound = new Audio('on.mp3');
+            const offsound = new Audio('off.mp3');
             let light = false;
 
-            function change () 
+            function change () {
                 
                 if(light==false) {
+
+                    onsound.play();
                     bulb.setAttribute("src", "cbon.png");
                     light = true;
                     btn.innerHTML = "Turn Off";
                 }
                 else {
+
+                    offsound.play();
                     bulb.setAttribute("src", "cboff.png");
                     light = false;
                     btn.innerHTML = "Turn On";
